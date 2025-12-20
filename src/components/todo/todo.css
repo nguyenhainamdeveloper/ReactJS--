@@ -1,0 +1,91 @@
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    font-family: sans-serif;
+}
+
+.todo-title {
+    font-size: 20px;
+    color: red;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+/* khu nhập task */
+.todo-new {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.text-task {
+    width: 300px;
+    padding: 6px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.btn-add {
+    background-color: blue;
+    color: white;
+    width: 60px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-add:hover {
+    background-color: darkblue;
+}
+
+/* danh sách todo */
+.todo-data {
+    width: 370px;
+}
+
+.todo-item {
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .logo {
+        animation: logo-spin infinite 20s linear;
+    }
+}
+
+.todo-image {
+    text-align: center;
+    margin-top: 15px;
+}
