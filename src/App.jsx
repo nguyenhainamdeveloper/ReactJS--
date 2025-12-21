@@ -14,6 +14,9 @@ function App() {
     alert(`call me ${name}`)
   }
 
+  const handleClick = () => {
+    alert("Click me!")
+  }
   // addNewTodo();
 
   return (
