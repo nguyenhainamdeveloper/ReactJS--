@@ -10,14 +10,25 @@ function App() {
     country: "Viet Nam"
   }
 
+  const addNewTodo = (name) => {
+    alert(`call me ${name}`)
+  }
+
+  // addNewTodo();
+
   return (
     <div className="todo-container">
       <div className="todo-title">Todo List</div>
-      <TodoNew />
+
+      <TodoNew
+        // không phải thực thi
+        addNewTodo={addNewTodo} //không có dấu đóng mở ngoặc là truyền 1 function sang bên kia
+      />
       <TodoData
         name={nguyenhainam}
         age={age}
         address={address}
+
       />
       <div className='todo-image'>
         <img src={reactLogo} className='logo' />
