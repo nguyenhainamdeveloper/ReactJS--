@@ -2,10 +2,10 @@ import { useState } from "react";
 
 const TodoNew = (props) => {
     const [valueInput, setValueInput] = useState("kaizin");
-    console.log(props)
-
     const { addNewTodo } = props;
+
     const handleClick = () => {
+        addNewTodo(valueInput)
         console.log(">>> check valueInput: ", valueInput)
     }
 
