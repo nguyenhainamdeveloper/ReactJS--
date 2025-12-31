@@ -5,8 +5,8 @@ const TodoNew = (props) => {
     const { addNewTodo } = props;
 
     const handleClick = () => {
-        addNewTodo(valueInput)
-        console.log(">>> check valueInput: ", valueInput)
+        addNewTodo(valueInput);
+        setValueInput("");
     }
 
     const hanldeOnChange = (name) => {
@@ -19,7 +19,9 @@ const TodoNew = (props) => {
         <div className="todo-new">
             <input type="text"
                 // Khi nào sự kiện onChange xảy ra nó mới thực thi func handleOnChange
-                onChange={(event) => hanldeOnChange(event.target.value)} />
+                onChange={(event) => hanldeOnChange(event.target.value)}
+                value={valueInput}
+            />
             <button style={{ cursor: "pointer" }}
                 onClick={handleClick}
             >Add</button>
