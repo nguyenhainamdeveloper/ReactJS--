@@ -4,13 +4,10 @@ import TodoData from './components/todo/TodoData';
 import reactLogo from './assets/react.svg';
 import { useState } from 'react';
 function App() {
-  const [todoList, setTodoList] = useState([{ id: 1, name: "Learning Reat" }, { id: 2, name: 'Wathching Youtube' }])
-  const nguyenhainam = "Kaizin";
-  const age = "22";
-  const address = {
-    city: "Ha Noi",
-    country: "Viet Nam"
-  }
+  const [todoList, setTodoList] = useState([
+    // { id: 1, name: "Learning Reat" }, { id: 2, name: 'Wathching Youtube' }
+  ])
+
 
   const addNewTodo = (name) => {
     const newTodo = {
@@ -25,6 +22,11 @@ function App() {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
+  const deleteTodo = (id) => {
+    const newTodoList = todoList.filter(item => item.id !== id);
+    setTodoList(newTodoList);
+  };
+
 
 
   // addNewTodo();
@@ -37,15 +39,18 @@ function App() {
         // không phải thực thi
         addNewTodo={addNewTodo} //không có dấu đóng mở ngoặc là truyền 1 function sang bên kia
       />
-      <TodoData
-        name={nguyenhainam}
-        age={age}
-        address={address}
-        todoList={todoList}
-      />
-      <div className='todo-image'>
-        <img src={reactLogo} className='logo' />
-      </div>
+
+      {todoList.length > 0 ? (
+        <TodoData
+          todoList={todoList}
+          deleteTodo={deleteTodo}
+        />
+      ) : (
+        <div className="todo-image">
+          <img src={reactLogo} className="logo" />
+        </div>
+      )}
+
     </div>
   );
 }
