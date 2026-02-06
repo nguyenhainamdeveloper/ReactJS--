@@ -2,7 +2,9 @@ import './components/todo/todo.css'
 import TodoNew from './components/todo/TodoNew';
 import TodoData from './components/todo/TodoData';
 import reactLogo from './assets/react.svg';
+import Header from './components/layout/header';
 import { useState } from 'react';
+import Footer from './components/layout/footer';
 function App() {
   const [todoList, setTodoList] = useState([
     // { id: 1, name: "Learning Reat" }, { id: 2, name: 'Wathching Youtube' }
@@ -32,26 +34,30 @@ function App() {
   // addNewTodo();
 
   return (
-    <div className="todo-container">
-      <div className="todo-title">Todo List</div>
+    <>
+      <Header />
+      <div className="todo-container">
+        <div className="todo-title">Todo List</div>
 
-      <TodoNew
-        // không phải thực thi
-        addNewTodo={addNewTodo} //không có dấu đóng mở ngoặc là truyền 1 function sang bên kia
-      />
-
-      {todoList.length > 0 ? (
-        <TodoData
-          todoList={todoList}
-          deleteTodo={deleteTodo}
+        <TodoNew
+          // không phải thực thi
+          addNewTodo={addNewTodo} //không có dấu đóng mở ngoặc là truyền 1 function sang bên kia
         />
-      ) : (
-        <div className="todo-image">
-          <img src={reactLogo} className="logo" />
-        </div>
-      )}
 
-    </div>
+        {todoList.length > 0 ? (
+          <TodoData
+            todoList={todoList}
+            deleteTodo={deleteTodo}
+          />
+        ) : (
+          <div className="todo-image">
+            <img src={reactLogo} className="logo" />
+          </div>
+        )}
+
+      </div>
+      <Footer />
+    </>
   );
 }
 
