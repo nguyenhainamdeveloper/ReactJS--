@@ -5,6 +5,8 @@ import reactLogo from './assets/react.svg';
 import Header from './components/layout/header';
 import { useState } from 'react';
 import Footer from './components/layout/footer';
+import { Outlet } from 'react-router-dom';
+
 function App() {
   const [todoList, setTodoList] = useState([
     // { id: 1, name: "Learning Reat" }, { id: 2, name: 'Wathching Youtube' }
@@ -56,6 +58,7 @@ function App() {
         )}
 
       </div>
+      <Outlet />
       <Footer />
     </>
   );
